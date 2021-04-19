@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.banner {
+    height: 100%;
+    background-image: url(img/banner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.459);
+    z-index: -1;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.logo {
+    width: 150px ;
+    height: auto;
+    margin: 8px;
+    cursor: pointer;
+}
+.open{
+  width: 35px;  
+  height: 35px;
+  display: none;
+  cursor: pointer;
+  margin-top: 4px;
+  margin-right: 10px;
+}
+.menu ul  {
+   display: flex;
+   margin-right: 80px;
+   margin-top: 6px;
+}
+
+.close{
+    margin: 6px;
+    align-self: flex-end;
+    display: none;
+    cursor: pointer;
+}
+.menu ul li {
+   list-style: none;
+   margin: 15px;
+}
+.menu ul li a {
+    text-decoration: none;
+    font-weight: 300;
+    color: white;
+    transition: border-bottom 1s ease;
+  }
+  .menu ul li::after {
+      content : '' ;
+      width: 0%;
+      height: 2px;
+      background-color: red;
+      display: block;
+      margin-top: 3px;
+      transition: .5s ease-in-out;
+  }
+  .menu ul li:hover::after {
+      width: 100%;
+  }
+
+.center {
+    color: white ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 900px;
+    text-align: center;
+    
+}
+.center h1{
+    
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+.center p{
+    padding-left: 120px;
+    padding-right: 120px;
+    margin-bottom: 50px;
+}
+ .button {
+    color: white;
+    display: inline;
+    border: 1px solid white ;
+    padding: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    transition: background-color .8s ease;
+}
+ .button:hover {
+   cursor: pointer;
+   background-color: rgba(165, 42, 42, 0.884);
+}
+
+.home h1 {
+    margin-top: 90px;
+    margin-bottom: 15px;
+    text-align: center; 
+}
+.courses p, .cities p{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.home .courses {
+    display: grid ;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 100px;
+ }
+.course {
+    
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(255, 199, 181,0.3);
+}
+.course h3{
+    margin-top: 10px;
+}
+.course:hover {
+    box-shadow: 5px 5px 7px 5px grey ;
+}
+
+img {
+    max-width:100%;
+    height:100%;
+}
+.cities {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    margin: 70px;
+}
+.city {
+    margin: 10px;
+    transition: background-color 1s ease;
+    position: relative;
+}
+.city img{
+    border-radius: 3%;
+}
+.over {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 3%;
+    background-color: rgb(230, 88, 88,0.7);
+    opacity: 0;
+    transition: opacity 1s ease;
+   
+}
+
+.city  p{
+  color: white ;
+  font-size: 25px;
+  font-weight: 300;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  margin-bottom: 10px;
+  display: none;
+  
+}
+.city:hover .over{
+   opacity: 1;
+
+}
+@keyframes move {
+    0%{
+       
+    }
+    100% {
+        transform: translate(50%,-450%);
+    }
+}
+
+.city:hover p{
+    display: block;
+    animation: move 1s alternate;
+  }
+.cities h4{
+    text-align: center;
+    margin: 15px;
+}
+.student {
+    width: 45% ;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(255, 199, 181,0.3); 
+    margin: 15px;
+    
+}
+#sub {
+    text-align: center;
+    margin-bottom: 15px ;
+    color : black;
+}
+
+.photo{
+    width: 35%;
+    height: auto;
+    align-self: flex-start;
+    margin: 10px;
+    margin-top: 2px;
+}
+
+.photo img{
+    
+    border-radius: 50%;
+   
+}
+.review {
+    display: flex;
+    justify-content: center;
+    margin: 60px;
+}
+.last{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 60px;
+    height: 300px;
+    background: url("img/banner2.jpg") ;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+}
+.overlay.idf{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.last p{
+    color : white;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.last .button{
+    border-top: 0.5px solid white;
+    border-bottom: 2px solid white;
+}
+footer {
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    text-align: center;
+}
+footer h3{
+    margin-bottom: 30px ;
+}
+footer p{
+    margin-bottom: 30px ;   
+}
+.icons ul{
+    display: flex;
+    justify-content: center;
+}
+.icons ul li{
+    margin: 20px;
+    list-style: none;
+  
+}
+
+@media only screen and (max-width: 650px) {
+    .navbar{
+        padding : 0;
+      }
+      .logo {
+          width: 130px ;
+          height: 50px;
+          margin: 5px;
+      }
+      .open{
+          display: block;
+      }
+      .open:hover {
+          transform: scale(1.2);
+      }
+      .menu{
+          position: absolute;
+          z-index: 2;
+          right: 0;
+          height: 100%;
+          width: 150px;
+          display: none;
+      }
+      
+      .menu ul{
+        
+        flex-direction: column;
+        margin-right: 0px;
+        margin-top: 0px;
+        background-color :rgb(3, 62, 65);
+       
+    }
+    .close {
+        display: block;
+    }
+    .menu ul li {
+        align-self: stretch;
+        list-style: none;
+        margin: 15px;
+        display: block;
+     }
+    .center h1{
+      font-size: 20px;
+      margin-bottom: 7px;
+      
+    }
+    .center p{
+      padding-left: 300px;
+      padding-right: 300px;
+      margin-bottom: 30px;
+  }
+   .button {
+      color: white;
+      display: inline;
+      border: 1px solid white ;
+      padding: 8px;
+      padding-right: 15px;
+      padding-left: 15px;
+      transition: background-color .8s ease;
+  }
+  .home .courses {
+    display: grid ;
+    grid-template-columns: 1fr ;
+    margin: 10%;
+    margin-bottom: 20%;
+   }
+   .cities {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    margin-bottom: 20%;
+    }
+    
+    .city.ff{
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    .student {
+       flex-direction: column;
+       margin: 3%;
+       margin-bottom: 20%;
+    }
+    .review {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        margin-bottom: 20%;
+    }
+    .last{
+        
+        margin: 5%;
+        margin-bottom: 20%;
+        padding: 3%;
+        height: auto;
+        
+    }
+    footer {
+        margin: 1%;
+       
+    }
+}
